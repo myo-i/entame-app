@@ -1,0 +1,19 @@
+<%= render "shared/second-header"%>
+<%= form_with model: @user, url: user_session_path, class: '', local: true do |f| %>
+  <div style="height: 800px;" class='bg-light d-flex justify-content-center align-items-center w-100 '>
+    <div style='height: 500px;' class='bg-white container w-50 mt-5 mb-5 pt-3'>
+      <div class="form-group">
+        <label class="font-weight-bold mt-5 ml-5 pl-3">メールアドレス</label>
+        <%= f.email_field :email, class:"form-control w-75 mt-2 mx-auto", id:"", placeholder:"Email", autofocus: true %>
+      </div>
+      <div class="form-group  mb-0 pb-5">
+        <label class="font-weight-bold mt-5 ml-5 pl-3">パスワード</label>
+        <%= f.password_field :password, class:"form-control w-75 mt-2 mx-auto", id:"", placeholder:"password", autofocus: true %>
+      </div>
+      <div class='d-flex justify-content-center '>
+        <%= f.submit "ログイン" ,class:" btn btn-outline-dark w-25 font-weight-bolder mb-5 mt-5" %>
+      </div>
+    </div>
+  </div>
+<% end %>
+<%= render "shared/footer" %>

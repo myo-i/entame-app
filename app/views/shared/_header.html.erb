@@ -1,17 +1,14 @@
-<header class='container-fluid'>
-  <div class='container-fluid'>
-    <%= link_to image_tag("", class:""), "/" %>
+<header class='container-fluid d-flex'>
+  <div class='container-fluid pl-5'>
+    <%= link_to image_tag("Free_Sample_By_Wix.jpeg", class:"ml-5", size:"60x60"), "/" %>
   </div>
-  <div class='container-fluid'>
-    
-    <div class='d-flex justify-content-end container-fluid'>
+    <div class='d-flex justify-content-end align-items-end container-fluid'>
       <%# if user_sined_in? %>
-        <%= link_to "ユーザーの名前", "#", class: "btn font-weight-normal ml-1" %>
-        <%= link_to 'ログアウト', "#", method: :delete, class: "btn btn-secondary ml-1" %>
+        <%= link_to "ユーザーの名前", '#', class: "btn font-weight-normal ml-1" %>
+        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "btn btn-secondary ml-1" %>
       <%# else %>
-        <%= link_to 'ログイン', "#", class: "btn btn-primary ml-1" %>
-        <%= link_to '新規登録', "#", class: "btn btn-primary ml-1" %>
+        <%= link_to 'ログイン', new_user_session_path, class: "btn btn-primary ml-1" %>
+        <%= link_to '新規登録', new_user_registration_path, class: "btn btn-primary ml-1" %>
       <%# end %>
     </div>
-  </div>
 </header>
