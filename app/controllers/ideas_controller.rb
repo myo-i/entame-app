@@ -1,5 +1,6 @@
 class IdeasController < ApplicationController
   before_action :authenticate_user!, only: [:create, :edit, :update, :destroy]
+  before_action :set_idea, only: [:show, :edit, :update, :destroy]
 
   def top
   end
@@ -22,12 +23,26 @@ class IdeasController < ApplicationController
   end
 
   def show
-    @idea = Idea.find(params[:id])
+  end
+
+  def edit
+  end
+
+  def update
+    if @idea.update(idea_params)
+      redirect_to ideas_path
+    else
+      render :show
+    end
   end
 
   private 
 
   def idea_params
     params.require(:idea).permit(:title, :idea_1, :idea_2, :idea_3).merge(user_id: current_user.id)
+  end
+
+  def set_idea
+    @idea = Idea.find(params[:id])
   end
 end
