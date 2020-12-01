@@ -1,11 +1,10 @@
 <%= render "shared/header" %>
 <div  class='bg-light h-100'>
 <% @ideas.each do |idea| %>
-  <ul class="list-group bg-light ">
-    <%= link_to idea_path(idea.id) do%>
-      <li class="list-group-item mt-2 text-dark shadow-sm w-75 mx-auto"><%= idea.title %></li>
-    <% end %>
-  </ul>
+  <div class="list-group bg-light d-flex flex-row justify-content-center pt-4">
+    <input type="checkbox" class='mt-4'>
+    <%= link_to  idea.title , idea_path(idea.id), class: "list-group-item mt-2 text-dark shadow-sm w-75 " %>
+  </div>
 <% end %>
   <div  class='d-flex justify-content-center align-items-center bg-light pt-5 pb-5'>
     <%= link_to '新規作成', new_idea_path, class: "btn btn-secondary" %>
