@@ -31,9 +31,9 @@
       </div>
     </div>
     <div class='d-flex justify-content-center mt-4'>
-      <%= link_to '編集する', edit_idea_path, method: :get, class: 'btn btn-secondary mr-5' %>
-      <%= link_to '共有する', new_idea_tweet_path(@idea.id), class: 'btn btn-primary mr-5' %>
-      <%= link_to '削除する', idea_path, method: :delete, class: 'btn btn-danger' %>
+      <% if user_signed_in? && current_user.id == @idea.user_id %>
+        <%= link_to '共有をやめる', idea_tweet_path, method: :delete, class: 'btn btn-danger' %>
+      <% end %>
     </div>
   </div>
 <%= render "shared/footer" %>

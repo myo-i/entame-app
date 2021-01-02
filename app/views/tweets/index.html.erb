@@ -1,0 +1,12 @@
+<%= render "shared/header" %>
+<div class='bg-light h-100'>
+<% @tweets.each do |tweet| %>
+  <div class='pt-4 pl-4 mt-4 container'>
+    <%= tweet.user.nickname %>
+  </div>
+  <div class="list-group bg-light d-flex flex-row justify-content-center ">
+    <%= link_to  tweet.idea.title , idea_tweet_path(tweet.idea, tweet.id), class: "list-group-item mt-2 text-dark shadow-sm w-75 " %>
+  </div>
+<% end %>
+</div>
+<%= render "shared/footer" %>
