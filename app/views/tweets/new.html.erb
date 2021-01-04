@@ -1,5 +1,11 @@
 <%= render "shared/header" %>
-  <div style='height: 1450px;' class='bg-light'>
+  <div style='height: 1590px;' class='bg-light'>
+    <div class='pl-5'>
+      <h2 class=' ml-5 mb-3 pl-5 pt-5'>作品ジャンル</h2>
+    </div>
+    <div class="form-control w-75 mt-2 mx-auto ">
+      <%= @idea.genre.name %>
+    </div>
     <div class='pl-5'>
       <h2 class=' ml-5 mb-3 pl-5 pt-5'>作品名</h2>
     </div>
@@ -34,7 +40,7 @@
     ＊内容に誤りがないか確認しよう
     </div>
     <div class='d-flex justify-content-center mt-4'>
-      <%= link_to '共有開始!!', idea_tweets_path, method: :post, class: 'btn btn-primary mr-5' %>
+      <%= link_to '共有開始!!', idea_tweets_path, method: :post, class: 'btn btn-secondary mr-5' %>
     </div>
   </div>
 <%= render "shared/footer" %>
