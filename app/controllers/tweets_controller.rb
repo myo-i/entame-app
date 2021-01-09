@@ -1,6 +1,6 @@
 class TweetsController < ApplicationController
   before_action :set_ideaid, only: [:index, :new, :create, :show]
-
+  before_action :set_tweet, only: [:destroy]
   def index
     @tweets = Tweet.all.order('created_at DESC')
   end
@@ -22,6 +22,14 @@ class TweetsController < ApplicationController
   def show
   end
 
+  def destroy
+    if @tweet.destroy
+      redirect_to idea_tweets_path
+    else
+      render :show
+    end
+  end
+
   private
 
   def tweet_params
@@ -30,5 +38,9 @@ class TweetsController < ApplicationController
 
   def set_ideaid
     @idea = Idea.find(params[:idea_id])
+  end
+
+  def set_tweet
+    @tweet = Tweet.find(params[:id])
   end
 end
