@@ -1,5 +1,5 @@
 class TweetsController < ApplicationController
-  before_action :set_ideaid, only: [:index, :new, :create, :show]
+  before_action :set_ideaid, only: [:new, :create, :show,]
   before_action :set_tweet, only: [:destroy]
   def index
     @tweets = Tweet.all.order('created_at DESC')
@@ -28,6 +28,10 @@ class TweetsController < ApplicationController
     else
       render :show
     end
+  end
+
+  def search
+    @tweets = Tweet.search(params[:keyword])
   end
 
   private

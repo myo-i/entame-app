@@ -1,7 +1,7 @@
 <%= render "shared/header" %>
 <div class="input-group bg-light ">
-  <%= form_with(url: '#', local: true, method: :get, class: "input-group w-50 mb-0") do |form| %>
-    <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "form-control" %>
+  <%= form_with(url: search_idea_tweets_path, local: true, method: :get, class: "input-group w-50 mb-0") do |form| %>
+    <%= form.text_field :keyword, placeholder: "タイトル名で検索する", class: "form-control" %>
     <%= form.submit "検索", class: "input-group-prepend" %>
   <% end %>
 </div>
@@ -11,7 +11,7 @@
     <%= tweet.user.nickname %>
     <span class='ml-4'>＜<%= tweet.idea.genre.name %>＞</span>
   </div>
-  
+
   <div class="list-group bg-light d-flex flex-row justify-content-center ">
     <%= link_to  tweet.idea.title , idea_tweet_path(tweet.idea, tweet.id), class: "list-group-item mt-2 text-dark shadow-sm w-75 " %>
   </div>
