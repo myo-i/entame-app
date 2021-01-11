@@ -7,15 +7,16 @@
     <% end %>
   </div>
   <% @tweets.each do |tweet| %>
-    <div class='pb-3'>
+    <div class="pb-3">
       <div class='pt-4 pl-4 mb-4 container '>
         <%= tweet.user.nickname %>
-        <span class='ml-4'>＜<%= tweet.idea.genre.name %>＞</span>
+        <span class='ml-4'>＜<%= tweet.genre.name %>＞</span>
       </div>
       <div class="list-group bg-light d-flex flex-row justify-content-center ">
-        <%= link_to  tweet.idea.title , idea_tweet_path(tweet.idea, tweet.id), class: "list-group-item mt-2 text-dark shadow-sm w-75 " %>
+        <%= link_to  tweet.title , idea_tweet_path(tweet, tweet.id), class: "list-group-item mt-2 text-dark shadow-sm w-75 " %>
       </div>
     </div>
   <% end %>
 </div>
+
 <%= render "shared/footer" %>
