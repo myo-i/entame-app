@@ -1,0 +1,17 @@
+@mixin animation(
+  $name,
+  $duration: 1s,
+  $timing-function: cubic-bezier(0.03, 1.09, 0.93, 0.16),
+  $delay: 0s,
+  $direction: normal,
+  $fill-mode: forwards
+) {
+  animation: {
+  name: $name;
+  duration: $duration;
+  timing-function: $timing-function;
+  delay: $delay;
+  direction: $direction;
+  fill-mode: $fill-mode;
+  }
+}

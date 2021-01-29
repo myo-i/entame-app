@@ -4,7 +4,7 @@
   </div>
     <div class='d-flex justify-content-end align-items-end container-fluid pb-1'>
       <% if user_signed_in? %>
-        <%= link_to current_user.nickname, ideas_path, class: "btn font-weight-normal ml-1" %>
+        <%= link_to current_user.nickname, ideas_path, class: "btn btn-outline-dark ml-1" %>
         <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "btn btn-secondary ml-1" %>
       <% else %>
         <%= link_to 'ログイン', new_user_session_path, class: "btn btn-secondary ml-1" %>

@@ -1,0 +1,61 @@
+@import 'mixin';
+
+.cover-slide {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(177, 174, 174);
+    @include animation(
+      $name: kf-cover-slide
+      );
+  }
+}
+
+@keyframes kf-cover-slide {
+  0% {
+    left: 0;
+    right: 100%;
+  }
+  10% {
+    left: 0;
+    right: 0;
+  }
+  100% {
+    left: 100%;
+    right: 0;
+  }
+}
+
+.img-effect {
+  opacity: 0;
+
+  &.inview {
+    opacity: 1;
+    @include animation(
+      $name: kf-img-show,
+      $duration: 1s
+      );
+  }
+}
+
+@keyframes kf-img-show {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0;
+  }
+  10.1% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
