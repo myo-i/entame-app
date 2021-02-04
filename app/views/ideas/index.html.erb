@@ -2,7 +2,6 @@
 <div  class='bg-light'>
 <% @ideas.each do |idea| %>
   <div class="list-group bg-light d-flex flex-row justify-content-center pt-4">
-    <input type="checkbox" class='mt-4 mr-2'>
     <%= link_to  idea.title , idea_path(idea.id), class: "list-group-item mt-2 text-dark shadow-sm w-75 " %>
   </div>
 <% end %>
