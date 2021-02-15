@@ -7,13 +7,13 @@
     <% end %>
   </div>
   <% @tweets.each do |tweet| %>
-    <div class='pb-3'>
-      <div class='pt-4 pl-4 mb-4 container '>
+    <div class='pad-20-10 container bg-white mb-4 mt-2'>
+      <div class='pt-2 pl-4 container pb-3'>
         <%= tweet.user.nickname %>
-        <span class='ml-4'>＜<%= tweet.idea.genre.name %>＞</span>
+        <span class='ml-4'>「 <%= tweet.idea.genre.name %> 」</span>
       </div>
-      <div class="list-group bg-light d-flex flex-row justify-content-center ">
-        <%= link_to  tweet.idea.title , idea_tweet_path(tweet.idea, tweet.id), class: "list-group-item mt-2 text-dark shadow-sm w-75 " %>
+      <div class="list-group d-flex flex-row justify-content-center ">
+        <%= link_to  tweet.idea.title , idea_tweet_path(tweet.idea, tweet.id), class: "list-group-item mt-2 text-dark shadow-sm w-100 " %>
       </div>
     </div>
   <% end %>
