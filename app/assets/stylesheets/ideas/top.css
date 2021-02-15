@@ -294,4 +294,37 @@
 .font-size20 {
   font-size: 25px;
 }
+
+.high-600 {
+  position: relative;
+  height: 800px;
+}
+
+.high-600 .container2 {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  height: 50%;
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.high-600 .container2 h1 {
+  margin-bottom: 100px;
+}
+
+.high-600 .container2 p {
+  font-size: 25px;
+  margin-top: 35px;
+}
 /*# sourceMappingURL=top.css.map */

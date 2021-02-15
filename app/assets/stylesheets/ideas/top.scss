@@ -128,3 +128,30 @@ $cWhite: white;
 .font-size20 {
   font-size: 25px;
 }
+
+.high-600 {
+  position: relative;
+  height: 800px;
+
+  & .container2 {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    height: 50%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    & h1 {
+      margin-bottom: 100px;
+    }
+
+    & p {
+      font-size: 25px;
+      margin-top: 35px;
+    }
+  }
+}
+
