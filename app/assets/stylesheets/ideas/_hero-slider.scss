@@ -1,0 +1,94 @@
+@import 'mixin';
+
+$cWhite: white;
+
+#container {
+  height: 800px;
+}
+
+.swiper-container {
+  height: 100%;
+  overflow: visible;
+}
+
+.swiper-slide {
+  height: 100%;
+  overflow: hidden;
+
+  & > img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    transform: scale(1.5) ;
+    transition: transform 1.3s ease;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 61, 125, 0.1);
+  }
+
+  &-active {
+    & > img {
+      transform: none;
+    }
+
+    // & .hero__title {
+    //   opacity: 1;
+    //   transform: translate(-50%, -50%);
+    // }
+  }
+}
+
+.hero {
+  &__title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% + 20px));
+    color: $cWhite;
+    font-size: 100px;
+    z-index: 5;
+    transition: opacity 1s ease 1s, transform 0.3s ease 1s;
+    opacity: 0;
+    @include animation(
+      $name: kf-hero-title,
+      $duration: 1.9s,
+      $timing-function: ease-in-out
+    )
+  }
+
+  &__subtitle {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% + 20px));
+    color: $cWhite;
+    font-size: 20px;
+    z-index: 5;
+  }
+}
+
+@keyframes kf-hero-title {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  50.1% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+

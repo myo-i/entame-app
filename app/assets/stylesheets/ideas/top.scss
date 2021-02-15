@@ -1,0 +1,157 @@
+@import 'mixin';
+
+$cWhite: white;
+
+@import 'hero-slider';
+
+.cover-slide {
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    background-color: rgb(177, 174, 174);
+    
+  }
+  
+    &::after {
+      opacity: 1;
+
+      @include animation(
+      $name: kf-cover-slide,
+      $duration: 1.6s,
+      $timing-function: ease-in-out
+      );
+    }
+  
+}
+
+
+@keyframes kf-cover-slide {
+  0% {
+    transform-origin: left;
+    transform: scaleX(0);
+  }
+  50% {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+  50.1% {
+    transform-origin: right;
+    transform: scaleX(1);
+  }
+  100% {
+    transform-origin: right;
+    transform: scaleX(0);
+  }
+}
+
+@keyframes kf-img-show {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  50.1% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.img-zoom {
+  opacity: 1;
+  max-width: 100% ;
+  
+    transition: transform 0.3s ease;
+    @include animation(
+      $name: kf-img-show,
+      $duration: 1.6s,
+      $timing-function: ease-in-out
+      // $fill-mode: none
+    );
+  
+}
+
+.bg-img-zoom {
+  z-index: 4;
+  background-image: url(4153301_m.jpg) !important;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+
+  @extend .img-zoom;
+}
+
+.bg-img-zoom2 {
+  z-index: 4;
+  background-image: url(charles-loyer-QN6fCROYdWM-unsplash.jpg) !important;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+
+  @extend .img-zoom;
+}
+
+.bg-img-zoom3 {
+  z-index: 4;
+  background-image: url(xps-uWFFw7leQNI-unsplash.jpg) !important;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+
+  @extend .img-zoom;
+}
+
+.pad-bt100 {
+  padding: 100px 0;
+}
+
+.ht-200 {
+  height: 200px;
+}
+
+.font-size20 {
+  font-size: 25px;
+}
+
+.high-600 {
+  position: relative;
+  height: 800px;
+
+  & .container2 {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    height: 50%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    & h1 {
+      margin-bottom: 100px;
+    }
+
+    & p {
+      font-size: 25px;
+      margin-top: 35px;
+    }
+  }
+}
+
