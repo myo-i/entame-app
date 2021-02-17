@@ -6,6 +6,7 @@ class CreateIdeas < ActiveRecord::Migration[6.0]
       t.text :idea_1, null: false
       t.text :idea_2, null: false
       t.text :idea_3, null: false
+      t.integer :genre_id, null: false
       t.timestamps
     end
   end

@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2020_12_04_041537) do
     t.text "idea_1", null: false
     t.text "idea_2", null: false
     t.text "idea_3", null: false
+    t.integer "genre_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
