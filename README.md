@@ -1,24 +1,36 @@
-# README
+### README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# entame-app  
+***
 
-Things you may want to cover:
+## Overview  
+***
+アニメや映画、小説などから学びを発見する  
+そんなエンターテイメントを為になるものにするアプリ  
+EN為-エンタメ-  
+## Requirement  
+***
+-macOS  
+-ruby 2.6.5  
+-AWS  
+## Usage  
+***
+＊ 使い方
+   * 作品の感動した洗い出す  
+   * 何をすれば理想に近づけるのかを考える  
+   * 実際のアクションプランを考える  
+   * シェアしたいと思ったらアイデアをツイートする
 
-* Ruby version
+## Reference  
+***
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Author  
+***
+* 作者情報
+   * 年齢:21歳（2/17時点）
+   * 職業:学生
+   * 専門:化学
+## Licence
+***
+MIT
