@@ -38,7 +38,12 @@ class IdeasController < ApplicationController
 
   def destroy
     if @idea.destroy
-      redirect_to ideas_path
+        if @idea.tweet
+          @idea.tweet.destroy
+          redirect_to ideas_path
+        else
+          redirect_to ideas_path
+        end
     else
       render :show
     end
