@@ -33,6 +33,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails' 
   gem 'factory_bot_rails'
+  gem 'sqlite3'
 end
 
 group :development do
@@ -60,3 +61,7 @@ gem 'devise'
 gem 'pry-rails'
 
 gem 'active_hash'
+
+group :production do
+  gem 'pg'
+end
