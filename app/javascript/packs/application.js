@@ -10,7 +10,6 @@ require("channels")
 // require("bootstrap.bundle.js")
 // require("jquery-3.5.1.js")
 require("../top")
-require("../hero-slider")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
